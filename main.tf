@@ -51,7 +51,7 @@ resource "aws_lb" "this" {
   }
 }
 
-resource "aws_lb" "main" {
+resource "aws_lb1" "main" {
   count = var.create_lb ? length(var.target_groups) : 0
 
   name        = lookup(var.target_groups[count.index], "name", null)
